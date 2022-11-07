@@ -6,7 +6,8 @@ function Card() {
     <motion.div
       className="card"
       whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
+      whileTap={{ scale: 1.5 }}
+      drag
     >
       <div className="card-frame">
         <img
