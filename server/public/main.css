@@ -1,5 +1,72 @@
 body {
-  background-color: #faf8f1;
+  background-color: #3c2f2f;
   color: #0a1520;
   font-family: 'Poppins', sans-serif;
 }
+
+.button{
+  background-color: #be9b7b;
+  border-radius: 15px;
+  border-width: 2px;
+  color:black;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: min-content;
+  margin-right: 10px;
+}
+
+.ribbon{
+  background-color: #4b3832; 
+  display:flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  border-radius: 15px;
+  border-width: 2px;
+}
+
+.card{
+  display:flex;
+  height: 200px;
+  width: 140px;
+  background-color: black;
+  border-radius: 5px;
+  border-width: 2px;
+  margin: 5px;
+}
+
+.card-frame{
+  display:flex;
+  background-color: #854442;
+  border-radius: 5px;
+  border-width: 2px;
+  padding: 5px;
+}
+
+.card-image{
+overflow: hidden;
+height: 60%;
+width: 100%;
+border-radius: 5px;
+border-width: 2px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+.hand{
+  display: flex;
+  width: min-content;
+  justify-content: center;
+  border-width: 5px;
+  border-color: #0a1520;
+  border-style: dashed;
+  border-radius: 15px;
+}
+
+.board{
+  height: 450px; ;
+}
+/* #4b3832 • #854442 • #fff4e6 • #3c2f2f • #be9b7b */

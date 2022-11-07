@@ -1,10 +1,14 @@
 import React from 'react'
+import Hand from './Hand'
 // import { Link } from 'react-router-dom'
 
 function Play() {
   return (
-    <div>
-      <h1>Play</h1>
+    <div className="container">
+      <div className="board"></div>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Hand />
+      </div>
     </div>
   )
 }
