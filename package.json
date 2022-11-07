@@ -62,6 +62,7 @@
   },
   "dependencies": {
     "express": "^4.17.2",
+    "framer-motion": "6.0",
     "knex": "^2.3.0",
     "sqlite3": "^5.1.2"
   },
