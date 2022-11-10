@@ -1,17 +1,18 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Card from './Card'
-// import { motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 function Hand() {
+  const constraintsRef = useRef(null)
   return (
-    <div className="hand">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-    </div>
+    <motion.div className="hand" ref={constraintsRef}>
+      <Card constraint={constraintsRef} />
+      <Card constraint={constraintsRef} />
+      <Card constraint={constraintsRef} />
+      <Card constraint={constraintsRef} />
+      <Card constraint={constraintsRef} />
+      <Card constraint={constraintsRef} />
+    </motion.div>
   )
 }
 
