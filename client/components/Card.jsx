@@ -31,8 +31,12 @@ function Card(props) {
       drag
       dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
       dragDirectionLock
-      onDragEnd={(event, info) => console.log(info.point.x, info.point.y)}
-      onDragStart={(event, info) => console.log(info.point.x, info.point.y)}
+      onDragEnd={(event, info) => {
+        console.log(info.point.x, info.point.y)
+      }}
+      onDragStart={(event, info) => {
+        console.log(info.point.x, info.point.y)
+      }}
     >
       <div className="card-frame">
         <img
