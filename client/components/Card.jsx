@@ -43,7 +43,8 @@ function Card(props) {
           onDragStart={(event) => {
             event.preventDefault()
           }}
-          src={pokemonData.sprites.front_default}
+          // src={pokemonData.sprites.front_default}
+          src="images/flanged-mace.png"
           alt="cardimage"
           className="card-image"
         ></img>
