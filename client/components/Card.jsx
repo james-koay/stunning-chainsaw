@@ -18,7 +18,7 @@ function Card(props) {
       x: info.point.x,
       y: info.point.y,
     })
-    console.log(dragInfo.x, dragInfo.y)
+    console.log(props.style.order)
   }
 
   function handleDragEnd(event, info) {
@@ -29,7 +29,7 @@ function Card(props) {
     let changeY = dragInfo.y - info.point.y
     if (changeY > 150) {
       console.log('card is played')
-      // props.cardEffect()
+      // eval(props.data.effect)
     } else if (changeX > 100) {
       console.log('card moved left')
     } else if (changeX < -100) {
@@ -66,13 +66,15 @@ function Card(props) {
       onDragEnd={handleDragEnd}
     >
       <div className="card-frame">
+        <div className="card-name">{props.data.name}</div>
         <img
           draggable="false"
           // src={pokemonData.sprites.front_default}
-          src="images/flanged-mace.png"
+          src={props.data.image}
           alt="cardimage"
           className="card-image"
         ></img>
+        <div className="card-text">{props.data.description}</div>
       </div>
     </motion.div>
   )
