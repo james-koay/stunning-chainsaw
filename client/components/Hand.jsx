@@ -2,12 +2,16 @@ import React, { useState, useEffect } from 'react'
 import Card from './Card'
 import cards from '../../server/public/cards.js'
 import { motion } from 'framer-motion'
+import { useDispatch, useSelector } from 'react-redux'
+import { updateHand } from '../actions/index'
 
 function Hand() {
-  const [cardsInHand, setCardsInHand] = useState([])
+  const dispatch = useDispatch()
+  // const [cardsInHand, setCardsInHand] = useState([])
 
   useEffect(() => {
-    setCardsInHand(drawCards(7))
+    let newHand = drawCards(7)
+    dispatch(updateHand(newHand))
   }, [])
 
   function drawCard() {
@@ -24,18 +28,12 @@ function Hand() {
     return hand
   }
 
+  let hand = useSelector((state) => state.hand)
+
   return (
     <motion.div className="hand">
-      {cardsInHand.map((card, index) => {
-        return (
-          <Card
-            data={card}
-            key={index}
-            style={{ order: index }}
-            setCardsInHand={setCardsInHand}
-            cardsInHand={cardsInHand}
-          />
-        )
+      {hand.map((card, index) => {
+        return <Card data={card} key={index} style={{ order: index }} />
       })}
     </motion.div>
   )
