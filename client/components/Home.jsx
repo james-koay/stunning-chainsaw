@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom'
 
 function Home() {
   return (
-    <div>
-      <h1>Home Page!</h1>
-      <Link to={'/play'}>Play!</Link>
+    <div className="home">
+      <h1>Slay the Beast!</h1>
+      <Link className="start-link" to={'/play'}>
+        Start
+      </Link>
     </div>
   )
 }

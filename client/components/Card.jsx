@@ -17,8 +17,6 @@ function Card(props) {
 
   function handleDragStart(event, info) {
     event.preventDefault()
-    console.log(info.point.x, info.point.y)
-    console.log(event)
     setDragInfo({
       x: info.point.x,
       y: info.point.y,
@@ -44,7 +42,7 @@ function Card(props) {
     if (changeY > 150) {
       console.log('card is played')
 
-      dispatch(delCard({ ...props.data }))
+      dispatch(delCard(props.data.order))
       resolveEffect(props.data.effect)
     } else if (changeX > 100) {
       console.log('card moved left')

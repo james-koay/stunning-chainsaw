@@ -123,3 +123,23 @@ background-color: #be9b7b;
 .enemy-image{
   width:350px;
 }
+
+.home{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.start-link{  
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  background-color: red;
+  border-radius: 15px;
+  border-width: 5px;
+  font-weight: bold;
+  font-size: 30px;
+}

@@ -4,7 +4,12 @@ import { motion } from 'framer-motion'
 import { useDispatch, useSelector } from 'react-redux'
 
 function Hand() {
-  let hand = useSelector((state) => state.hand)
+  const [hand, setHand] = useState([])
+  let handData = useSelector((state) => state.hand)
+
+  useEffect(() => {
+    setHand(handData)
+  })
 
   return (
     <div className="hand">
