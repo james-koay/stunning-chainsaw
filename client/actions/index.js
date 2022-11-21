@@ -18,3 +18,24 @@ export function updateHand(updateHand) {
     payload: updateHand,
   }
 }
+
+export function updateHeroArmor(change) {
+  return {
+    type: 'UPDATE_ARMOR',
+    payload: change,
+  }
+}
+
+export function updateEnemyLife(change) {
+  return {
+    type: 'UPDATE_ENEMY_LIFE',
+    payload: change,
+  }
+}
+
+export function updateHeroLife(change) {
+  return {
+    type: 'UPDATE_HERO_LIFE',
+    payload: change,
+  }
+}

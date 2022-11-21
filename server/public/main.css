@@ -106,3 +106,20 @@ background-color: #be9b7b;
   justify-content: center;
   justify-items: center;
 }
+
+
+.status-bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.enemy-container{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.enemy-image{
+  width:350px;
+}

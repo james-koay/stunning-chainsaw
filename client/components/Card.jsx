@@ -1,24 +1,38 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { getPokemonById } from '../apiClient'
+import {
+  delCard,
+  updateEnemyLife,
+  updateHeroLife,
+  updateHeroArmor,
+} from '../actions/index'
+import { useDispatch, useSelector } from 'react-redux'
+// import { getPokemonById } from '../apiClient'
 
 function Card(props) {
-  const [pokemonData, setPokemonData] = useState({})
-  const [isPokemonLoading, setIsPokemonLoading] = useState(true)
+  const dispatch = useDispatch()
+  // let game = useSelector((state) => state.game)
+
   const [dragInfo, setDragInfo] = useState({ x: 0, y: 0 })
 
-  // function handleDragUp(props.cardEffect){
-  //   return cardEffect()
-  // }
-
   function handleDragStart(event, info) {
+    event.preventDefault()
     console.log(info.point.x, info.point.y)
     console.log(event)
     setDragInfo({
       x: info.point.x,
       y: info.point.y,
     })
-    console.log(props.style.order)
+  }
+
+  function resolveEffect(effect) {
+    if (effect.target == 'HeroLife') {
+      dispatch(updateHeroLife(effect.value))
+    } else if (effect.target == 'enemyLife') {
+      dispatch(updateEnemyLife(effect.value))
+    } else if (effect.target == 'heroArmor') {
+      dispatch(updateHeroArmor(effect.value))
+    }
   }
 
   function handleDragEnd(event, info) {
@@ -29,30 +43,15 @@ function Card(props) {
     let changeY = dragInfo.y - info.point.y
     if (changeY > 150) {
       console.log('card is played')
-      // eval(props.data.effect)
+
+      dispatch(delCard({ ...props.data }))
+      resolveEffect(props.data.effect)
     } else if (changeX > 100) {
       console.log('card moved left')
     } else if (changeX < -100) {
       console.log('card moved right')
     }
   }
-
-  useEffect(() => {
-    setIsPokemonLoading(true)
-    console.log(props.constraint)
-    getPokemonById(124)
-      .then((res) => {
-        setPokemonData(res)
-      })
-      .finally(() => {
-        setIsPokemonLoading(false)
-      })
-      .catch((err) => {
-        console.error(err.message)
-      })
-  }, [])
-
-  if (isPokemonLoading) return <div>Loading</div>
 
   return (
     <motion.div
@@ -69,7 +68,6 @@ function Card(props) {
         <div className="card-name">{props.data.name}</div>
         <img
           draggable="false"
-          // src={pokemonData.sprites.front_default}
           src={props.data.image}
           alt="cardimage"
           className="card-image"

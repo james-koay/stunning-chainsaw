@@ -2,12 +2,13 @@ const initialHandState = []
 
 const handReducer = (state = initialHandState, action) => {
   const { type, payload } = action
-  console.log(payload)
   switch (type) {
     case 'ADD_CARD':
       return [...state, payload]
     case 'DEL_CARD':
-      return state.filter((card) => card.order !== payload.order)
+      const newState = state
+      newState.splice(payload.key, 1)
+      return newState
     case 'UPDATE_HAND': {
       const newState = payload
       return newState
