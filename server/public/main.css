@@ -1,3 +1,5 @@
+/* #4b3832 • #854442 • #fff4e6 • #3c2f2f • #be9b7b */
+
 body {
   background-color: #3c2f2f;
   color: #0a1520;
@@ -6,6 +8,7 @@ body {
 
 .button{
   background-color: #be9b7b;
+  border-color:  #be9b7b;
   border-radius: 15px;
   border-width: 2px;
   color:black;
@@ -13,6 +16,21 @@ body {
   padding-right: 10px;
   width: min-content;
   margin-right: 10px;
+}
+
+.button-small{
+  background-color: #be9b7b;
+  border-color:  #be9b7b;
+  border-radius: 15px;
+  border-width: 1px;
+  color:black;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: max-content;
+  height: 20px;
+  margin-right: 10px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .ribbon{
@@ -23,6 +41,15 @@ body {
   width: 100%;
   border-radius: 15px;
   border-width: 2px;
+}
+
+.auth-ribbon{
+  display:flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  margin-top: -8px;
+  padding: 5px;
 }
 
 .card{
@@ -98,7 +125,6 @@ background-color: #be9b7b;
   border-radius: 15px;
 }
 
-/* #4b3832 • #854442 • #fff4e6 • #3c2f2f • #be9b7b */
 
 .enemy{
   display: flex;
@@ -126,8 +152,7 @@ background-color: #be9b7b;
 
 .home{
   display: flex;
-  justify-content: center;
-  justify-items: center;
+  align-items: center;
   text-align: center;
   flex-direction: column;
 }
@@ -135,11 +160,17 @@ background-color: #be9b7b;
 .start-link{  
   display: flex;
   justify-content: center;
-  justify-items: center;
   text-align: center;
   background-color: red;
   border-radius: 15px;
   border-width: 5px;
   font-weight: bold;
   font-size: 30px;
+  width: 300px;
 }
+
+.user-name{
+  color: white;
+  margin-right: 15px;
+}
+

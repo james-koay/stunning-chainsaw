@@ -31,6 +31,7 @@
   "author": "Dev Academy Aotearoa",
   "license": "ISC",
   "devDependencies": {
+    "@auth0/auth0-react": "^1.8.0",
     "@babel/core": "^7.15.6",
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.15.6",
