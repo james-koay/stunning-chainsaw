@@ -21,6 +21,10 @@ function Collection() {
     navigate('/collection/' + id)
   }
 
+  function handleClickNew() {
+    navigate('/collection/1/new')
+  }
+
   if (isLoading) {
     return <div>loading...</div>
   } else {
@@ -49,6 +53,18 @@ function Collection() {
               </motion.div>
             )
           })}
+        </div>
+        <div className="container-row">
+          <div
+            className="button"
+            onClick={() => handleClickNew()}
+            onKeyPress={() => handleClickNew()}
+            role="button"
+            tabIndex={0}
+            style={{ width: 'max-content', 'margin-top': '15px' }}
+          >
+            Add New Card
+          </div>
         </div>
       </div>
     )

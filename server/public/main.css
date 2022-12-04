@@ -6,6 +6,15 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+label{color: white;
+margin-top:15px;
+}
+
+input{
+  margin-bottom:5px;
+  }
+  
+
 .button{
   background-color: #be9b7b;
   border-color:  #be9b7b;
@@ -203,4 +212,3 @@ background-color: #be9b7b;
   color: white;
   margin-right: 15px;
 }
-

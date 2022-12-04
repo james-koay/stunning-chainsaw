@@ -18,9 +18,17 @@ export function getCardById(id) {
 
 // POST /api/v1/cards/new
 export function newCard(card) {
+  const newCard = {
+    name: card.name,
+    image: card.image,
+    effect_target: card.effect_target,
+    effect_value: card.effect_value,
+    description: card.description,
+  }
+
   return request
     .post(rootUrl + '/cards/new')
-    .send(card)
+    .send(newCard)
     .then((res) => {
       return res.body
     })

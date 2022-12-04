@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { getCardById } from '../apis/cards'
+import { getCardById, deleteCard } from '../apis/cards'
 
 function CardDetails() {
   const [card, setCard] = useState({})
   const [isLoading, setIsLoading] = useState(true)
   const params = useParams()
   const navigate = useNavigate()
-
+  const cardId = Number(params.cardid)
   useEffect(() => {
-    const cardId = Number(params.cardid)
     getCardById(cardId)
       .then((card) => {
         setCard(card)
@@ -19,11 +18,11 @@ function CardDetails() {
   }, [])
 
   function handleClickEdit() {
-    const cardId = Number(params.cardid)
     navigate('/collection/' + cardId + '/edit')
   }
 
   function handleClickDelete() {
+    deleteCard(cardId)
     navigate('/collection')
   }
 
@@ -52,7 +51,7 @@ function CardDetails() {
         </div>
         <div className="container-row">
           <div
-            className="button-small"
+            className="button"
             onClick={() => handleClickEdit()}
             onKeyPress={() => handleClickEdit()}
             role="button"
@@ -61,7 +60,7 @@ function CardDetails() {
             Edit
           </div>
           <div
-            className="button-small"
+            className="button"
             onClick={() => handleClickDelete()}
             onKeyPress={() => handleClickDelete()}
             role="button"
