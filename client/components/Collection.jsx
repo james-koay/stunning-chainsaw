@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { getCards } from '../apis/cards'
 import { motion } from 'framer-motion'
 
-function Cards() {
+function Collection() {
   const [cards, setCards] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const navigate = useNavigate()
 
   useEffect(() => {
     getCards()
@@ -14,7 +15,12 @@ function Cards() {
         setIsLoading(false)
       })
       .catch((e) => console.log(e))
-  })
+  }, [])
+
+  function handleCardClick(id) {
+    console.log(id)
+    navigate('/collection/' + id)
+  }
 
   if (isLoading) {
     return <div>loading...</div>
@@ -29,6 +35,7 @@ function Cards() {
                 className="card"
                 whileHover={{ scale: 1.5 }}
                 key={index}
+                onClick={() => handleCardClick(card.id)}
               >
                 <div className="card-frame">
                   <div className="card-name">{card.name}</div>
@@ -49,4 +56,4 @@ function Cards() {
   }
 }
 
-export default Cards
+export default Collection

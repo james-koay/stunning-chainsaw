@@ -2,7 +2,8 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import Play from './Play'
-import Cards from './Cards'
+import Collection from './Collection'
+import CardDetails from './CardDetails'
 import Ribbon from './Ribbon'
 import AuthRibbon from './AuthRibbon'
 import { ProtectedRoute } from '../utils/auth'
@@ -14,7 +15,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/play" element={<ProtectedRoute component={Play} />} />
-        <Route path="/cards" element={<ProtectedRoute component={Cards} />} />
+        <Route
+          path="/collection"
+          element={<ProtectedRoute component={Collection} />}
+        />
+        <Route
+          path="/collection/:cardid"
+          element={<ProtectedRoute component={CardDetails} />}
+        />
       </Routes>
     </div>
   )

@@ -11,7 +11,7 @@ export function getCards() {
 
 // GET /api/v1/cards/:cardid
 export function getCardById(id) {
-  return request.get(rootUrl + '/cards/' + { id }).then((res) => {
+  return request.get(rootUrl + '/cards/' + id).then((res) => {
     return res.body
   })
 }
