@@ -14,6 +14,11 @@ function Ribbon() {
           <h1>Play</h1>
         </div>
       </Link>
+      <Link to={'/cards'}>
+        <div className="button">
+          <h1>Collection</h1>
+        </div>
+      </Link>
     </div>
   )
 }

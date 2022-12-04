@@ -115,6 +115,14 @@ background-color: #be9b7b;
   align-items: center;
 }
 
+.collection{
+  display: flex;
+  width: 30vw;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
 .hand{
   display: flex;
   width: min-content;
