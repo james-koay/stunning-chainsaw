@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { getCards } from '../apis/cards'
 import { motion } from 'framer-motion'
 
@@ -18,7 +18,6 @@ function Collection() {
   }, [])
 
   function handleCardClick(id) {
-    console.log(id)
     navigate('/collection/' + id)
   }
 
@@ -41,7 +40,7 @@ function Collection() {
                   <div className="card-name">{card.name}</div>
                   <img
                     draggable="false"
-                    src={card.image}
+                    src={'/' + card.image}
                     alt="cardimage"
                     className="card-image"
                   ></img>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { getCardById } from '../apis/cards'
 
 function CardDetails() {
@@ -30,7 +30,7 @@ function CardDetails() {
               <div className="card-name">{card.name}</div>
               <img
                 draggable="false"
-                src={card.image}
+                src={'/' + card.image}
                 alt="cardimage"
                 className="card-image"
               ></img>

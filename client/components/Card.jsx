@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import {
   delCard,
@@ -6,12 +6,10 @@ import {
   updateHeroLife,
   updateHeroArmor,
 } from '../actions/index'
-import { useDispatch, useSelector } from 'react-redux'
-// import { getPokemonById } from '../apiClient'
+import { useDispatch } from 'react-redux'
 
 function Card(props) {
   const dispatch = useDispatch()
-  // let game = useSelector((state) => state.game)
 
   const [dragInfo, setDragInfo] = useState({ x: 0, y: 0 })
 
