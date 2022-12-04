@@ -23,13 +23,13 @@ function Card(props) {
     })
   }
 
-  function resolveEffect(effect) {
-    if (effect.target == 'HeroLife') {
-      dispatch(updateHeroLife(effect.value))
-    } else if (effect.target == 'enemyLife') {
-      dispatch(updateEnemyLife(effect.value))
-    } else if (effect.target == 'heroArmor') {
-      dispatch(updateHeroArmor(effect.value))
+  function resolveEffect(data) {
+    if (data.effect_target == 'heroLife') {
+      dispatch(updateHeroLife(data.effect_value))
+    } else if (data.effect_target == 'enemyLife') {
+      dispatch(updateEnemyLife(data.effect_value))
+    } else if (data.effect_target == 'heroArmor') {
+      dispatch(updateHeroArmor(data.effect_value))
     }
   }
 
@@ -43,7 +43,7 @@ function Card(props) {
       console.log('card is played')
 
       dispatch(delCard(props.data.order))
-      resolveEffect(props.data.effect)
+      resolveEffect(props.data)
     } else if (changeX > 100) {
       console.log('card moved left')
     } else if (changeX < -100) {

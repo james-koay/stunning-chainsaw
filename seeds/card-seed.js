@@ -1,12 +1,17 @@
-export default {
-  cards: [
+/**
+ * @param { import("knex").Knex } knex
+ * @returns { Promise<void> }
+ */
+exports.seed = async function (knex) {
+  // Deletes ALL existing entries
+  await knex('cards').del()
+  await knex('cards').insert([
     {
       name: 'Amphora',
       image: 'images/amphora.png',
       effect_target: 'heroLife',
       effect_value: 20,
       description: 'Gain 20 life',
-      order: 0,
     },
     {
       name: 'Throw Blades',
@@ -14,7 +19,6 @@ export default {
       effect_target: 'enemyLife',
       effect_value: -15,
       description: 'Deal 15 Damage',
-      order: 0,
     },
     {
       name: 'Axe Swing',
@@ -22,7 +26,6 @@ export default {
       effect_target: 'enemyLife',
       effect_value: -20,
       description: 'Deal 20 Damage',
-      order: 0,
     },
     {
       name: 'Sword Attack',
@@ -30,15 +33,13 @@ export default {
       effect_target: 'enemyLife',
       effect_value: -20,
       description: 'Deal 20 Damage',
-      order: 0,
     },
     {
       name: 'Block',
       image: 'images/checked-shield.png',
       effect_target: 'heroArmor',
       effect_value: 10,
-      description: 'gain 10 Armor',
-      order: 0,
+      description: 'Gain 10 Armor',
     },
     {
       name: 'Mace Bash',
@@ -46,7 +47,6 @@ export default {
       effect_target: 'enemyLife',
       effect_value: -20,
       description: 'Deal 20 Damage',
-      order: 0,
     },
     {
       name: 'Cleave',
@@ -54,7 +54,6 @@ export default {
       effect_target: 'enemyLife',
       effect_value: -25,
       description: 'Deal 25 Damage',
-      order: 0,
     },
-  ],
+  ])
 }
