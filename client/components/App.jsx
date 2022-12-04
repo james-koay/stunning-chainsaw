@@ -5,6 +5,7 @@ import Play from './Play'
 import Collection from './Collection'
 import CardDetails from './CardDetails'
 import Ribbon from './Ribbon'
+import CardForm from './CardForm'
 import AuthRibbon from './AuthRibbon'
 import { ProtectedRoute } from '../utils/auth'
 function App() {
@@ -22,6 +23,10 @@ function App() {
         <Route
           path="/collection/:cardid"
           element={<ProtectedRoute component={CardDetails} />}
+        />
+        <Route
+          path="/collection/:cardid/:type"
+          element={<ProtectedRoute component={CardForm} />}
         />
       </Routes>
     </div>

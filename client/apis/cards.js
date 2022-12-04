@@ -15,3 +15,30 @@ export function getCardById(id) {
     return res.body
   })
 }
+
+// POST /api/v1/cards/new
+export function newCard(card) {
+  return request
+    .post(rootUrl + '/cards/new')
+    .send(card)
+    .then((res) => {
+      return res.body
+    })
+}
+
+// PATCH /api/v1/cards/edit
+export function editCard(card) {
+  return request
+    .patch(rootUrl + '/cards/edit')
+    .send(card)
+    .then((res) => {
+      return res.body
+    })
+}
+
+// delete /api/v1/cards/delete/:id
+export function deleteCard(id) {
+  return request.delete(rootUrl + '/cards/delete/' + id).then((res) => {
+    return res.body
+  })
+}

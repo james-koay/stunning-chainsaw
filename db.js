@@ -11,8 +11,8 @@ function close(db = connection) {
   db.destroy()
 }
 
-function deleteCardbyName(name, db = connection) {
-  return db('cards').delete().where('name', name)
+function deleteCardById(id, db = connection) {
+  return db('cards').delete().where('id', id)
 }
 
 function newCard(newcard, db = connection) {
@@ -21,6 +21,10 @@ function newCard(newcard, db = connection) {
 
 function updateCardByName(name, updatedCard, db = connection) {
   return db('cards').update(updatedCard).where('name', name)
+}
+
+function updateCardById(updatedCard, db = connection) {
+  return db('cards').update(updatedCard).where('id', updatedCard.id)
 }
 
 function searchCardByName(name, db = connection) {
@@ -34,9 +38,10 @@ function getCardById(id, db = connection) {
 module.exports = {
   getCards,
   close,
-  deleteCardbyName,
+  deleteCardById,
   newCard,
   updateCardByName,
   searchCardByName,
   getCardById,
+  updateCardById,
 }
