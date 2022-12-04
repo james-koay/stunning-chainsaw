@@ -8,7 +8,7 @@ exports.up = function (knex) {
     table.string('name')
     table.string('image')
     table.string('effect_target')
-    table.string('effect_value')
+    table.integer('effect_value')
     table.string('description')
   })
 }

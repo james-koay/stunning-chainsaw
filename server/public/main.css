@@ -16,6 +16,19 @@ body {
   padding-right: 10px;
   width: min-content;
   margin-right: 10px;
+  cursor: pointer;
+}
+
+.button-end-turn{
+  background-color: #be9b7b;
+  border-color:  #be9b7b;
+  border-radius: 15px;
+  border-width: 2px;
+  color:black;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: max-content;
+  cursor: pointer;
 }
 
 .button-small{
@@ -31,6 +44,7 @@ body {
   margin-right: 10px;
   font-size: 15px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .ribbon{
