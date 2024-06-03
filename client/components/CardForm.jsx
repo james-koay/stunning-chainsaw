@@ -61,7 +61,7 @@ function CardForm() {
           ></input>
           <label htmlFor="image">Choose an image:</label>
 
-          <select name="image" id="image">
+          <select name="image" id="image" onChange={handleChange}>
             <option value="images/amphora.png">amphora.png</option>
             <option value="images/assassin-pocket.png">
               assassin-pocket.png
@@ -80,14 +80,18 @@ function CardForm() {
           </select>
 
           <label htmlFor="effect_target">Choose a target:</label>
-          <select name="effect_target" id="effect_target">
+          <select
+            name="effect_target"
+            id="effect_target"
+            onChange={handleChange}
+          >
             <option value="heroLife">Hero Life</option>
-            <option value="heroLife">Hero Armor</option>
+            <option value="heroArmor">Hero Armor</option>
             <option value="enemyLife">Enemy Life</option>
           </select>
 
-          <label htmlFor="effect_target">Choose effect value:</label>
-          <select name="effect_target" id="effect_target">
+          <label htmlFor="effect_value">Choose effect value:</label>
+          <select name="effect_value" id="effect_value" onChange={handleChange}>
             <option value="25">25</option>
             <option value="20">20</option>
             <option value="15">15</option>
